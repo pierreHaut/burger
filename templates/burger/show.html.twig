@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Burger{% endblock %}
+
+{% block body %}
+    <h1>Un Burger</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>#</th>
+                <td>{{ burger.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ burger.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ burger.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ burger.price }}</td>
+            </tr>
+            <tr>
+                <th>Supp Double</th>
+                <td>{{ burger.suppDouble }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('burger_index') }}"  class="btn btn-primary">Retour à la liste</a>
+
+    <a href="{{ path('burger_edit', {'id': burger.id}) }}"   class="btn btn-warning">edit</a>
+
+    {{ include('burger/_delete_form.html.twig') }}
+{% endblock %}

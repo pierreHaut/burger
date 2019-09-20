@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Burger{% endblock %}
+
+{% block body %}
+
+    <H1>Gestion des burgers</H1>
+
+    <h2>Consulter la liste des burgers disponibles</H2>
+    <button class="btn btn-primary" id ='myButton'>A voir</button>
+
+
+    <div id ="maliste" class="table table-striped"></div>
+
+
+
+    <script>
+
+            $("#myButton").click(function () {
+
+                $.ajax({
+                    url: '{{ path('listJson') }}',                 
+                    contentType: 'application/json; charset=utf-8',                 
+                    complete: function (data, statut) {                        
+                        console.log(data.responseJSON);
+                        var ob4 = $.parseJSON(data.responseJSON);
+                           $.each(ob4, function (key2, value2) {
+                                //console.log("2 ..." +  key2.toString() + ': '  +  value2.toString() );
+                                var str ="<div class='row'>";
+                                $.each(value2, function (key2, value2) {
+                                    console.log("22 ..." +  key2.toString() + ': '  +  value2.toString() );                        
+                                   str += '<div  class="col-sm">'+  key2 + ': '  +  value2 + '</div>'; 
+                            }) ;
+                            str += "</div>";
+                                $('#maliste').append(str);
+                            }) ;                        
+                    }
+
+                });
+            });
+
+
+
+
+    </script>
+
+
+{% endblock %}

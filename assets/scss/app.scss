@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 25-juin-2019, 11:10:09
+    Author     : Pierre
+*/
+$color_head: #f00144;
+$primary: blue;
+$color-form-foot : #17a2b8;
+@import "~bootstrap/scss/bootstrap";
+
+
+body {
+    background:  whitesmoke;
+    margin:50px;
+    
+    aside, main {
+        display: block;
+        float: left;
+    }
+    h1{
+        color: $color_head;
+    }
+    .form-group {
+        margin-top: 20px!important;
+    }
+    .my-form-admin {
+        color: $color-form-foot
+    }
+
+    my-col1, label {
+        width: 30%;
+    }
+    label{
+        color: blue;
+        display: block;
+        float: left;
+        text-align: right;
+        margin-right: 10px;
+        clear: both;
+    }
+    input, select, textarea {
+        display: block;
+        float: left;
+    }
+
+    .my-submit {
+        clear: both;
+        text-align: right;
+        width: 30%;
+        margin-bottom: 10px;
+    }
+
+    .admin-show-table {
+        float: left;
+        max-width: 50%;
+
+    }
+    .admin-show-image {
+        float: left;
+        max-width: 49%;  
+    } 
+}
+
